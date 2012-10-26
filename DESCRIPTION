@@ -1,0 +1,22 @@
+Package: pathdiagram
+Type: Package
+Title: Basic functions for drawing path diagrams
+Version: 0.1.5
+Date: 2012-10-26
+Author: Gaston Sanchez
+Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
+Description: Implementation of simple functions that help
+    me drawing basic path diagrams just for visualization purposes.
+URL: http://www.gastonsanchez.com/pathdiagram
+Depends:
+    shape,
+    R (>= 2.15.1)
+Suggest: diagram, grid
+License: GPL-3
+LazyLoad: yes
+Collate:
+    'arrow.R'
+    'draw.R'
+    'latent.R'
+    'manifest.R'
+    'wall.R'
