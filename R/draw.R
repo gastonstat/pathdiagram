@@ -48,13 +48,13 @@ function(obj)
     rect(obj$xl, obj$yb, obj$xr, obj$yt, col=obj$fill, border=obj$border,
          lwd=obj$lwd)
     text(obj$north[1], obj$east[2], labels=obj$label, col=obj$col,
-         cex=obj$cex, vfont=obj$vfont, font=obj$font)    
+         cex=obj$cex, vfont=obj$vfont, font=obj$font, family=obj$family)    
   }
   if (class(obj) == "latent")
   {
     plotellipse(rx=obj$rx, ry=obj$ry, mid=c(obj$x, obj$y), 
                 lcol=obj$lcol, col=obj$fill, lwd=obj$lwd)
     text(obj$x, obj$y, labels=obj$label, col=obj$col,
-         cex=obj$cex, vfont=obj$vfont, font=obj$font)
+         cex=obj$cex, vfont=obj$vfont, font=obj$font, family=obj$family)
   }
 }

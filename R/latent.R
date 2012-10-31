@@ -21,6 +21,8 @@
 #'@param vfont font family of the label.
 #'@param font An integer specifying which font to use for the label.
 #'See \code{\link{par}}
+#'@param family The name of a font family for drawing text. 
+#'Standard values are \code{"serif"}, \code{"sans"} and \code{"mono"}.
 #'@return An object of class \code{"latent"}, which is a list with the
 #'specified parameters to draw latent variables.
 #'@author Gaston Sanchez
@@ -46,7 +48,7 @@
 latent <- 
   function(label = "latent", x = 0.5, y = 0.5, rx = 0.05, ry = 0.05,
            border = "white", lwd = 2, fill = "#5f8bd7", col = "white",
-           cex = 1, vfont = NULL, font = 2)
+           cex = 1, vfont = NULL, font = 2, family = "sans")
 {
   # list of specs
   lat = list(label = label, 
@@ -64,7 +66,8 @@ latent <-
              col = col,
              cex = cex,
              font = font,
-             vfont = vfont)
+             vfont = vfont,
+             family = family)
   class(lat) = "latent"
   lat
 }

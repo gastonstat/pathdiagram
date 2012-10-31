@@ -21,6 +21,8 @@
 #'@param vfont font family of the label.
 #'@param font An integer specifying which font to use for the label.
 #'See \code{\link{par}}
+#'@param family The name of a font family for drawing text. 
+#'Standard values are \code{"serif"}, \code{"sans"} and \code{"mono"}.
 #'@return An object of class \code{"manifest"}, which is a list with the
 #'specified parameters to draw manifest variables.
 #'@author Gaston Sanchez
@@ -50,7 +52,7 @@
 manifest <- 
   function(label = "manifest", x = 0.5, y = 0.5, width = NULL, height = 0.1,
            border = "white", fill = "#9dbafa", lwd = 1, col = "gray20", cex = 1,
-           vfont = NULL, font = 1)
+           vfont = NULL, font = 1, family = "sans")
 {
   if (is.null(width))
     width = nchar(label) / 50
@@ -74,7 +76,8 @@ manifest <-
              col = col,
              cex = cex,
              vfont = vfont,
-             font = font)
+             font = font,
+             family = family)
   class(man) = "manifest"
   man
 }

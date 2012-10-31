@@ -5,7 +5,7 @@
   manifest(label = "manifest", x = 0.5, y = 0.5,
     width = NULL, height = 0.1, border = "white",
     fill = "#9dbafa", lwd = 1, col = "gray20", cex = 1,
-    vfont = NULL, font = 1)
+    vfont = NULL, font = 1, family = "sans")
 }
 \arguments{
   \item{label}{A character string with the label to be
@@ -35,6 +35,10 @@
 
   \item{font}{An integer specifying which font to use for
   the label. See \code{\link{par}}}
+
+  \item{family}{The name of a font family for drawing text.
+  Standard values are \code{"serif"}, \code{"sans"} and
+  \code{"mono"}.}
 }
 \value{
   An object of class \code{"manifest"}, which is a list

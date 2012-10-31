@@ -1,6 +1,6 @@
 # pathdiagram
 
-The R package **pathdiagram** implements simple functions to draw basic path diagrams just for visualization purposes.
+The R package **pathdiagram** implements simple functions to draw basic PLS path diagrams just for visualization purposes.
 
 ## Installation
 
