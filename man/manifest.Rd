@@ -1,6 +1,6 @@
 \name{manifest}
 \alias{manifest}
-\title{manifest: set specifications of a manifest variable}
+\title{Set specifications of a manifest variable}
 \usage{
   manifest(label = "manifest", x = 0.5, y = 0.5,
     width = NULL, height = 0.1, border = "white",
@@ -11,11 +11,9 @@
   \item{label}{A character string with the label to be
   displayed.}
 
-  \item{x}{x-axis coordinate for center of rectanlge. Must
-  be a value between 0 and 1.}
+  \item{x}{x-axis coordinate for center of rectanlge.}
 
-  \item{y}{y-axis coordinate for center of rectangle. Must
-  be a value between 0 and 1.}
+  \item{y}{y-axis coordinate for center of rectangle.}
 
   \item{width}{width of the rectangle.}
 
@@ -65,6 +63,7 @@
  # open wall
  wall()
  title("Five manifest variables", col.main="gray20")
+
  # draw manifest variables
  draw(eggs)
  draw(milk)

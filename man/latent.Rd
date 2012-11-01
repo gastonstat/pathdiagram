@@ -1,6 +1,6 @@
 \name{latent}
 \alias{latent}
-\title{latent: set specifications of a latent variable}
+\title{Set specifications of a latent variable}
 \usage{
   latent(label = "latent", x = 0.5, y = 0.5, rx = 0.05,
     ry = 0.05, border = "white", lwd = 2, fill = "#5f8bd7",
@@ -11,11 +11,9 @@
   \item{label}{A character string with the label to be
   displayed.}
 
-  \item{x}{x-axis coordinate for center of ellipse. Must be
-  a value between 0 and 1.}
+  \item{x}{x-axis coordinate for center of ellipse.}
 
-  \item{y}{y-axis coordinate for center of ellipse. Must be
-  a value between 0 and 1.}
+  \item{y}{y-axis coordinate for center of ellipse.}
 
   \item{rx}{long radius of ellipse.}
 
@@ -64,6 +62,7 @@
  # opwn wall
  wall()
  title("Drawing three latent variables", col.main="gray20")
+
  # draw variables
  draw(attack)
  draw(defense)

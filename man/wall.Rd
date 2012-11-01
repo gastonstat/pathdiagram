@@ -1,6 +1,6 @@
 \name{wall}
 \alias{wall}
-\title{wall: open a new frame for a path diagram}
+\title{Open a new frame for a path diagram}
 \usage{
   wall(xlim = c(0, 1), ylim = c(0, 1), mar = rep(1, 4))
 }
@@ -21,7 +21,8 @@
 }
 \description{
   Use this function to open a white canvas to start drawing
-  a path diagram.
+  a path diagram. By default, \code{wall} opens a plot
+  window from 0 to 1 in both axes.
 }
 \examples{
 \dontrun{
@@ -32,10 +33,12 @@
 
  # open diagram
  wall()
+
  # draw latent variables
  draw(attack)
  draw(defense)
  draw(success)
+
  # add arrows
  arrow(from=attack, to=success, start="east", end="west")
  arrow(from=defense, to=success, start="east", end="west")

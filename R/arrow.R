@@ -1,4 +1,4 @@
-#'@title arrow: plot arrow between variables
+#'@title Plot arrow between variables
 #'
 #'@description
 #'Use this function to draw connecting arrows between manifest and latent variables.

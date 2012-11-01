@@ -1,6 +1,6 @@
 \name{arrow}
 \alias{arrow}
-\title{arrow: plot arrow between variables}
+\title{Plot arrow between variables}
 \usage{
   arrow(from, to, start = "east", end = "west",
     length = 0.1, angle = 10, code = 2, col = "#d2def1",

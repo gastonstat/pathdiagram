@@ -1,7 +1,8 @@
-#'@title wall: open a new frame for a path diagram
+#'@title Open a new frame for a path diagram
 #'
 #'@description
-#'Use this function to open a white canvas to start drawing a path diagram.
+#'Use this function to open a white canvas to start drawing a path diagram. 
+#'By default, \code{wall} opens a plot window from 0 to 1 in both axes.
 #'
 #'@param xlim Numeric vector of length 2 giving the x coordinate range.
 #'Default \code{xlim = c(0, 1)}.
@@ -24,10 +25,12 @@
 #'
 #'  # open diagram
 #'  wall()
+#'  
 #'  # draw latent variables
 #'  draw(attack)
 #'  draw(defense)
 #'  draw(success)
+#'  
 #'  # add arrows
 #'  arrow(from=attack, to=success, start="east", end="west")
 #'  arrow(from=defense, to=success, start="east", end="west")

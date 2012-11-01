@@ -1,4 +1,4 @@
-#'@title latent: set specifications of a latent variable
+#'@title Set specifications of a latent variable
 #'
 #'@description
 #'Use this function to specify the graphic characteristics of a latent variable.
@@ -9,8 +9,8 @@
 #'Latent variables are drawn as ellipses using the function \code{\link{plotellipse}}
 #'
 #'@param label A character string with the label to be displayed.
-#'@param x x-axis coordinate for center of ellipse. Must be a value between 0 and 1.
-#'@param y y-axis coordinate for center of ellipse. Must be a value between 0 and 1.
+#'@param x x-axis coordinate for center of ellipse.
+#'@param y y-axis coordinate for center of ellipse.
 #'@param rx long radius of ellipse.
 #'@param ry short radius of ellipse.
 #'@param border color of the border.
@@ -39,6 +39,7 @@
 #'  # opwn wall
 #'  wall()
 #'  title("Drawing three latent variables", col.main="gray20")
+#'  
 #'  # draw variables
 #'  draw(attack)
 #'  draw(defense)

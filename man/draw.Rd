@@ -1,6 +1,6 @@
 \name{draw}
 \alias{draw}
-\title{draw: draw manifest and latent variables}
+\title{Draw manifest and latent variables}
 \usage{
   draw(obj)
 }
@@ -29,11 +29,13 @@
 
  # open wall
  wall()
+
  title("Toy Path Diagram", col.main="gray20")
  # draw manifest variables
  for (i in 1:length(ingredients)) {
     draw(ingredients[[i]])
  }
+
  # draw latent variables
  draw(pancakes)
  draw(waffles)

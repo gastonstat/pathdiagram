@@ -1,4 +1,4 @@
-#'@title manifest: set specifications of a manifest variable
+#'@title Set specifications of a manifest variable
 #'
 #'@description
 #'Use this function to specify the graphic characteristics of a manifest variable.
@@ -9,8 +9,8 @@
 #'Manifest variables are drawn as rectangles.
 #'
 #'@param label A character string with the label to be displayed.
-#'@param x x-axis coordinate for center of rectanlge. Must be a value between 0 and 1.
-#'@param y y-axis coordinate for center of rectangle. Must be a value between 0 and 1.
+#'@param x x-axis coordinate for center of rectanlge.
+#'@param y y-axis coordinate for center of rectangle.
 #'@param width width of the rectangle.
 #'@param height height of the rectangle.
 #'@param border color of the border.
@@ -41,6 +41,7 @@
 #'  # open wall
 #'  wall()
 #'  title("Five manifest variables", col.main="gray20")
+#'  
 #'  # draw manifest variables
 #'  draw(eggs)
 #'  draw(milk)

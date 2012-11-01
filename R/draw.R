@@ -1,4 +1,4 @@
-#'@title draw: draw manifest and latent variables
+#'@title Draw manifest and latent variables
 #'
 #'@description
 #'Use this function to draw either manifest or latent variables on a plot.
@@ -25,11 +25,13 @@
 #'
 #'  # open wall
 #'  wall()
+#'  
 #'  title("Toy Path Diagram", col.main="gray20")
 #'  # draw manifest variables
 #'  for (i in 1:length(ingredients)) {
 #'     draw(ingredients[[i]])
 #'  }
+#'  
 #'  # draw latent variables
 #'  draw(pancakes)
 #'  draw(waffles)
