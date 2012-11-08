@@ -2,7 +2,7 @@
 \alias{wall}
 \title{Open a new frame for a path diagram}
 \usage{
-  wall(xlim = c(0, 1), ylim = c(0, 1), mar = rep(1, 4))
+  wall(xlim = c(0, 1), ylim = c(0, 1), xpd = TRUE, ...)
 }
 \arguments{
   \item{xlim}{Numeric vector of length 2 giving the x
@@ -11,18 +11,21 @@
   \item{ylim}{Numeric vector of length 2 giving the y
   coordinate range. Default \code{ylim = c(0, 1)}.}
 
-  \item{mar}{A numerical vector of the form c(bottom, left,
-  top, right) which gives the number of lines of margin to
-  be specified on the four sides of the plot. The default
-  is c(1, 1, 1, 1).}
+  \item{xpd}{Logical value to indicate if all plotting is
+  clipped to the figure region. The default is c(1, 1, 1,
+  1).}
 
   \item{...}{other graphical arguments passed on to
-  \code{\link{par}}.}
+  \code{\link{plot.window}}.}
 }
 \description{
   Use this function to open a white canvas to start drawing
-  a path diagram. By default, \code{wall} opens a plot
+  a path diagram. By default, \code{wall} opens a new plot
   window from 0 to 1 in both axes.
+}
+\details{
+  \code{wall} calls \code{plot.new()} and
+  \code{plot.window()} to open a new plot frame.
 }
 \examples{
 \dontrun{

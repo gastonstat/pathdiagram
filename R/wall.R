@@ -2,16 +2,18 @@
 #'
 #'@description
 #'Use this function to open a white canvas to start drawing a path diagram. 
-#'By default, \code{wall} opens a plot window from 0 to 1 in both axes.
+#'By default, \code{wall} opens a new plot window from 0 to 1 in both axes.
+#'
+#'@details
+#'\code{wall} calls \code{plot.new()} and \code{plot.window()} to open a new plot frame.
 #'
 #'@param xlim Numeric vector of length 2 giving the x coordinate range.
 #'Default \code{xlim = c(0, 1)}.
 #'@param ylim Numeric vector of length 2 giving the y coordinate range.
 #'Default \code{ylim = c(0, 1)}.
-#'@param mar A numerical vector of the form c(bottom, left, top, right) which 
-#'gives the number of lines of margin to be specified on the four sides of the plot. 
+#'@param xpd Logical value to indicate if all plotting is clipped to the figure region. 
 #'The default is c(1, 1, 1, 1).
-#'@param ... other graphical arguments passed on to \code{\link{par}}.
+#'@param ... other graphical arguments passed on to \code{\link{plot.window}}.
 #'@author Gaston Sanchez
 #'@seealso \code{\link{manifest}}, \code{\link{latent}}, \code{\link{draw}}
 #'@export
@@ -37,10 +39,8 @@
 #'  }
 #'
 wall <-
-function(xlim = c(0, 1), ylim = c(0, 1), mar = rep(1, 4))
+function(xlim = c(0, 1), ylim = c(0, 1), xpd = TRUE, ...)
 {
-  op = par(mar = mar)
   plot.new()
-  plot.window(xlim = xlim, ylim = ylim)
-  par(op)
+  plot.window(xlim = xlim, ylim = ylim, xpd = xpd, ...)
 }

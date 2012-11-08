@@ -1,0 +1,6 @@
+Version 0.1.8 (2012-11-08)
+-----------------------------------------
+
+* remove parameter `mar` from function `wall` (it wasn't that useful)
+
+* add parameter `xpd` to function `wall`
