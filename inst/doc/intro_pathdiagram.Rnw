@@ -1,0 +1,160 @@
+\documentclass{article}
+\usepackage{upquote}
+\usepackage{geometry}
+\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=2.5cm,rmargin=2.5cm}
+\setlength{\parindent}{0in}
+\usepackage{color}
+\definecolor{darkgray}{rgb}{0.3,0.3,0.3}
+\definecolor{lightgray}{rgb}{0.5,0.5,0.5}
+\definecolor{tomato}{rgb}{0.87,0.32,0.24}
+\definecolor{myblue}{rgb}{0.066,0.545,0.890}
+\definecolor{linkcolor}{rgb}{0.87,0.32,0.24}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  urlcolor=linkcolor,
+  linkcolor=linkcolor
+}
+
+% \VignetteIndexEntry{Introduction to pathdiagram}
+% \VignetteEngine{knitr}
+
+\begin{document}
+\title{Introduction to \texttt{pathdiagram}}
+\author{
+ \textbf{\textcolor{darkgray}{G}}\textcolor{lightgray}{aston} 
+ \textbf{\textcolor{darkgray}{S}}\textcolor{lightgray}{anchez} \\
+  \small \texttt{\href{http://www.gastonsanchez.com}{gastonsanchez.com}}
+}
+\date{}
+\maketitle
+
+
+<<echo=FALSE, message=FALSE>>=
+library(pathdiagram)
+@
+
+\section{Introduction}
+\texttt{pathdiagram} is an experimental R package for drawing path diagrams in R. Briefly, path diagrams are just a graphical means to visually display path models. The aim of the R package \texttt{pathdiagram} is to help you draw path diagrams the way they are usually depicted under a \textbf{Partial Least Squares} (PLS) approach, like the one below.
+
+
+
+\subsection{Motivation}
+The one and only reason to create \texttt{pathdiagram} was the need to plot a path diagram in R. Since I was writing the tutorials and demos for my other packages \texttt{plspm} and \texttt{plsdepot}, I realized that I badly needed path diagrams accompanying my examples. I first tried using the \texttt{grid} package. It was fine but it didn't allow me to have complete control over the looking of the objects (mainly with color of lines, borders, text, etc). Then I tried to use the package \texttt{diagram} but I got the same restrictions. Finally, after some short experiments, I decided to create \texttt{pathdiagram}.
+
+
+\subsection{Installation}
+\texttt{pathdiagram} is not on the CRAN repository. Instead, it lives in one of my github repositories: \\
+\href{https://github.com/gastonstat/pathdiagram}
+{https://github.com/gastonstat/pathdiagram}. 
+To import it in R, you will need to use the package \texttt{"devtools"} with the function \texttt{install\_github()}. Simply run in your R console:
+<<eval=FALSE>>=
+# install 'devtools'
+install.packages("devtools") 
+
+# load devtools
+library(devtools)
+
+# install 'pathdiagram'
+install_github('pathdiagram',  username='gastonstat')
+@
+
+Once \texttt{pathdiagram}  has been installed, you just need to load it like you would load any other package:
+<<eval=FALSE>>=
+library(pathdiagram)
+@
+
+
+
+\subsection{Available Functions}
+\texttt{pathdiagram} provides five functions:
+\begin{center}
+ \begin{tabular}{l l}
+  Function & Description \\
+  \hline
+  \texttt{manifest()} & sets the graphical specifcations for a manifest variable \\
+  \texttt{latent()} & sets the graphical specifcations for a latent variable \\
+  \texttt{wall()} & opens a new plotting window to start drawing a path diagram \\
+  \texttt{draw()} & plots either a manifest or a latent variable \\
+  \texttt{arrow()} & plots an arrow between two specifed variables \\
+ \end{tabular}
+\end{center}
+
+These functions are all what you need to create beautiful PLS-like path diagrams in R. This type of diagrams follow a set of semi-established rules to represent different types of variables, as well as the relationships between them. The general convention is to display manifest variables in a rectangular shape,
+and latent variables in a circular-elliptical way. I'm not going to describe the etiquette rules for PLS path diagrams (if you google a little bit you will find more information about this topic). Instead, I'm going to focus on describing the know-how for generating path diagrams with pathdiagram.
+
+
+\subsubsection{\texttt{manifest()} variables}
+We begin by defining the manifest variables: \textit{eggs, milk, flour, sugar, butter}. For illustration purposes, I'm going to define each ingredient separately, and then I will use a list to store these variables. Each variable
+is defined with the function \texttt{manifest()}. The first argument is the label that will be displayed inside the rectangle. The rest of the parameters set the graphical characteristics like the coordinates of the rectangle's
+center, its width and height, the fill color, the border color, the type of font for the label, etc.
+<<manifest_variables>>=
+# manifest variables
+eggs = manifest("Eggs", x = 0.25, y = 0.8, width = 0.1, height = 0.08)
+milk = manifest("Milk", x = 0.25, y = 0.65, width = 0.1, height = 0.08)
+flour = manifest("Flour", x = 0.25, y = 0.5, width = 0.1, height = 0.08)
+sugar = manifest("Sugar", x = 0.25, y = 0.35, width = 0.1, height = 0.08)
+butter = manifest("Butter", x = 0.25, y = 0.2, width = 0.1, height = 0.08)
+
+# list with ingredients
+ingredients = list(eggs, milk, flour, sugar, butter)
+@
+
+
+\subsubsection{\texttt{latent()} variables}
+The following step is to define the latent variables by using the function \texttt{latent()} which has pretty much the same parameters of \texttt{manifest()}. The only difference is that \texttt{latent()} does not have a \texttt{width} and a \texttt{height} parameters. Instead, it has \texttt{rx} and \texttt{ry} which are the major and minor radius of the ellipse.
+<<latent_variables>>=
+# latent variables
+pancakes = latent("Pancakes", x = 0.8, y = 0.65, rx = 0.08, ry = 0.06)
+waffles = latent("Waffles", x = 0.8, y = 0.35, rx = 0.08, ry = 0.06)
+@
+
+The real challenge is in the values for the parameters \texttt{x, y, width, height, rx} and \texttt{ry}. To be honest, you will need to try different values until you find the best location and looking shapes for your manifest and latent variables.
+
+\subsubsection{\texttt{draw()}ing the diagram}
+Once we have defined the variables, the next step is to draw them in a plot window. \texttt{pathdiagram} comes with the function \texttt{wall()} that opens a white canvas to start drawing your diagram. But you could as well
+use the typical \texttt{plot()} function to open a plotting window.
+<<diagram1, fig.width=9, fig.height=6, out.width='.9\\linewidth', out.height='.6\\linewidth', fig.align='center'>>=
+# open a new wall
+wall()
+
+# draw latent variables
+draw(pancakes)
+draw(waffles)
+
+# draw ingredients
+for (i in 1:5) {
+  draw(ingredients[[i]])
+}
+@
+
+
+The last step is to add the connecting arrows with the function \texttt{arrow()}. Basically, you just need to tell from which variable to which variable there is a connection, and what are the starting and ending positions for the arrow according to the four cardinal options: \texttt{"north", "south", "east"}, and \texttt{"west"}.
+<<add_arrows, eval=FALSE>>=
+# arrows
+for (i in 1:5) {
+arrow(from = ingredients[[i]], to = pancakes, start = "east", end = "west")
+arrow(from = ingredients[[i]], to = waffles, start = "east", end = "west")
+}
+@
+
+<<diagram2, echo=FALSE, fig.width=9, fig.height=5.5, out.width='.9\\linewidth', out.height='.6\\linewidth', fig.align='center'>>=
+# open a new wall
+wall(xlim=c(.1,.9), ylim=c(.1,.9))
+
+# draw latent variables
+draw(pancakes)
+draw(waffles)
+
+# draw ingredients
+for (i in 1:5) {
+  draw(ingredients[[i]])
+}
+
+for (i in 1:5) {
+arrow(from = ingredients[[i]], to = pancakes, start = "east", end = "west")
+arrow(from = ingredients[[i]], to = waffles, start = "east", end = "west")
+}
+@
+
+\end{document}

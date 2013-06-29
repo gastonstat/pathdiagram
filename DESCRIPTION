@@ -1,8 +1,8 @@
 Package: pathdiagram
 Type: Package
 Title: Basic functions for drawing path diagrams
-Version: 0.1.8
-Date: 2012-11-08
+Version: 0.1.9
+Date: 2013-06-29
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: Implementation of simple functions that help
@@ -13,7 +13,7 @@ Depends:
     R (>= 2.15.1)
 Suggest: diagram, grid
 License: GPL-3
-LazyLoad: yes
+VignetteBuilder: knitr
 Collate:
     'arrow.R'
     'draw.R'
