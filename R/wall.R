@@ -1,23 +1,24 @@
-#'@title Open a new frame for a path diagram
+#' @title Open a new frame for a path diagram
+#' 
+#' @description
+#' Use this function to open a white canvas to start drawing a path diagram. 
+#' By default, \code{wall} opens a new plot window from 0 to 1 in both axes.
+#' 
+#' @details
+#' \code{wall} calls \code{\link{plot.new}} and \code{\link{plot.window}}
+#' to open a new plot frame.
 #'
-#'@description
-#'Use this function to open a white canvas to start drawing a path diagram. 
-#'By default, \code{wall} opens a new plot window from 0 to 1 in both axes.
-#'
-#'@details
-#'\code{wall} calls \code{plot.new()} and \code{plot.window()} to open a new plot frame.
-#'
-#'@param xlim Numeric vector of length 2 giving the x coordinate range.
-#'Default \code{xlim = c(0, 1)}.
-#'@param ylim Numeric vector of length 2 giving the y coordinate range.
-#'Default \code{ylim = c(0, 1)}.
-#'@param xpd Logical value to indicate if all plotting is clipped to the figure region. 
-#'The default is c(1, 1, 1, 1).
-#'@param ... other graphical arguments passed on to \code{\link{plot.window}}.
-#'@author Gaston Sanchez
-#'@seealso \code{\link{manifest}}, \code{\link{latent}}, \code{\link{draw}}
-#'@export
-#'@examples
+#' @param xlim Numeric vector of length 2 giving the x coordinate range.
+#' Default \code{xlim = c(0, 1)}.
+#' @param ylim Numeric vector of length 2 giving the y coordinate range.
+#' Default \code{ylim = c(0, 1)}.
+#' @param xpd Logical value to indicate if all plotting is clipped to the 
+#' figure region. 
+#' @param ... other graphical arguments passed on to \code{\link{plot.window}}.
+#' @author Gaston Sanchez
+#' @seealso \code{\link{manifest}}, \code{\link{latent}}, \code{\link{draw}}
+#' @export
+#' @examples
 #'
 #'  \dontrun{
 #'  # latent variables

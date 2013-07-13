@@ -1,34 +1,34 @@
-#'@title Set specifications of a manifest variable
-#'
-#'@description
-#'Use this function to specify the graphic characteristics of a manifest variable.
-#'The specifications will be used by the function \code{draw} to plot manifest
-#'variables (in a path diagram).
-#'
-#'@details
-#'Manifest variables are drawn as rectangles.
-#'
-#'@param label A character string with the label to be displayed.
-#'@param x x-axis coordinate for center of rectanlge.
-#'@param y y-axis coordinate for center of rectangle.
-#'@param width width of the rectangle.
-#'@param height height of the rectangle.
-#'@param border color of the border.
-#'@param fill color to fill the rectangle.
-#'@param lwd width of the border.
-#'@param col color of the label.
-#'@param cex numeric character expansion of the label. 
-#'@param vfont font family of the label.
-#'@param font An integer specifying which font to use for the label.
-#'See \code{\link{par}}
-#'@param family The name of a font family for drawing text. 
-#'Standard values are \code{"serif"}, \code{"sans"} and \code{"mono"}.
-#'@return An object of class \code{"manifest"}, which is a list with the
-#'specified parameters to draw manifest variables.
-#'@author Gaston Sanchez
-#'@seealso \code{\link{latent}}, \code{\link{draw}}
-#'@export
-#'@examples
+#' @title Set specifications of a manifest variable
+#' 
+#' @description
+#' Use this function to specify the graphic characteristics of a manifest 
+#' variable. The specifications will be used by the function \code{draw} 
+#' to plot manifest variables (in a path diagram).
+#' 
+#' @details
+#' Manifest variables are drawn as rectangles.
+#' 
+#' @param label A character string with the label to be displayed.
+#' @param x x-axis coordinate for center of rectanlge.
+#' @param y y-axis coordinate for center of rectangle.
+#' @param width width of the rectangle.
+#' @param height height of the rectangle.
+#' @param border color of the border.
+#' @param fill color to fill the rectangle.
+#' @param lwd width of the border.
+#' @param col color of the label.
+#' @param cex numeric character expansion of the label. 
+#' @param vfont font family of the label.
+#' @param font An integer specifying which font to use for the label.
+#' See \code{\link{par}}
+#' @param family The name of a font family for drawing text. 
+#' Standard values are \code{"serif"}, \code{"sans"} and \code{"mono"}.
+#' @return An object of class \code{"manifest"}, which is a list with the
+#' specified parameters to draw manifest variables.
+#' @author Gaston Sanchez
+#' @seealso \code{\link{latent}}, \code{\link{draw}}
+#' @export
+#' @examples
 #'
 #'  \dontrun{
 #'  # manifest variables
@@ -55,14 +55,14 @@ manifest <-
            border = "white", fill = "#9dbafa", lwd = 1, col = "gray20", cex = 1,
            vfont = NULL, font = 1, family = "sans")
 {
-  if (is.null(width))
-    width = nchar(label) / 50
-  xl = x - width/2
-  yb = y - height/2
-  xr = x + width/2
-  yt = y + height/2
+  if (is.null(width)) width = nchar(label) / 50
+  xl = x - width / 2
+  yb = y - height / 2
+  xr = x + width / 2
+  yt = y + height / 2
+  
   # list of specs
-  man = list(label = label, 
+  manif = list(label = label, 
              xl = xl, 
              yb = yb, 
              xr = xr, 
@@ -79,6 +79,6 @@ manifest <-
              vfont = vfont,
              font = font,
              family = family)
-  class(man) = "manifest"
-  man
+  class(manif) = "manifest"
+  manif
 }

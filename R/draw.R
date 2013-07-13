@@ -1,13 +1,13 @@
-#'@title Draw manifest and latent variables
-#'
-#'@description
-#'Use this function to draw either manifest or latent variables on a plot.
-#'
-#'@param obj An object of either class \code{"manifest"} or \code{"latent"}
-#'@author Gaston Sanchez
-#'@seealso \code{\link{manifest}}, \code{\link{latent}}
-#'@export
-#'@examples
+#' @title Draw manifest and latent variables
+#' 
+#' @description
+#' Use this function to draw either manifest or latent variables on a plot.
+#' 
+#' @param obj An object of either class \code{"manifest"} or \code{"latent"}
+#' @author Gaston Sanchez
+#' @seealso \code{\link{manifest}}, \code{\link{latent}}
+#' @export
+#' @examples
 #'
 #'  \dontrun{
 #'  # manifest variables
