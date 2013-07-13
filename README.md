@@ -10,7 +10,8 @@ The one and only reason to create `pathdiagram` was the need to plot a path diag
 
 ## Installation
 
-Development version on [github](https://github.com/gastonstat/pathdiagram) ```ruby
+Development version on [github](https://github.com/gastonstat/pathdiagram)
+```ruby
 # development version 
 library(devtools)
 install_github('pathdiagram',  username='gastonstat')
