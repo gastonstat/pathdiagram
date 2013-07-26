@@ -2,7 +2,7 @@ Package: pathdiagram
 Type: Package
 Title: Basic functions for drawing path diagrams
 Version: 0.1.9
-Date: 2013-07-13
+Date: 2013-07-26
 Author: Gaston Sanchez
 Maintainer: Gaston Sanchez <gaston.stat@gmail.com>
 Description: Implementation of simple functions to draw
