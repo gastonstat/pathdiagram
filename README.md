@@ -5,7 +5,7 @@
 
 ## Motivation
 
-The one and only reason to create `pathdiagram` was the need to plot a <a href="http://en.wikipedia.org/wiki/Path_analysis_(statistics)">path diagram</a> in R. Since I was writing the tutorials and demos for the package `plspm` I realized that I badly needed path diagrams accompanying my examples. I first tried using the `grid` package. It was fine but it didn't allow me to have complete control over the looking of the objects (mainly with color of lines, borders, text, etc). Then I tried to use the package `diagram` but I got the same restrictions. Finally, after some short experiments, I decided to create `pathdiagram`.  
+The one and only reason to create `pathdiagram` was the need to plot a <a href="http://en.wikipedia.org/wiki/Path_analysis_(statistics)" target="_blank">path diagram</a> in R. Since I was writing the tutorials and demos for the package `plspm` I realized that I badly needed path diagrams accompanying my examples. I first tried using the `grid` package. It was fine but it didn't allow me to have complete control over the looking of the objects (mainly with color of lines, borders, text, etc). Then I tried to use the package `diagram` but I got the same restrictions. Finally, after some short experiments, I decided to create `pathdiagram`.  
 
 
 ## Installation
